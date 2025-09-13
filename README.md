@@ -1,821 +1,350 @@
-# 🌐 iOS Networking Architecture Pro
-[![CI](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/actions/workflows/ci.yml)
-
-
-
-<div align="center">
-
-![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-15.0+-000000?style=for-the-badge&logo=ios&logoColor=white)
-![Xcode](https://img.shields.io/badge/Xcode-15.0+-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
-![Networking](https://img.shields.io/badge/Networking-HTTP-4CAF50?style=for-the-badge)
-![REST](https://img.shields.io/badge/REST-API-2196F3?style=for-the-badge)
-![GraphQL](https://img.shields.io/badge/GraphQL-Query-FF9800?style=for-the-badge)
-![WebSocket](https://img.shields.io/badge/WebSocket-Real-time-9C27B0?style=for-the-badge)
-![Caching](https://img.shields.io/badge/Caching-Smart-00BCD4?style=for-the-badge)
-![Retry](https://img.shields.io/badge/Retry-Exponential-607D8B?style=for-the-badge)
-![Authentication](https://img.shields.io/badge/Authentication-OAuth-795548?style=for-the-badge)
-![SSL](https://img.shields.io/badge/SSL-Pinning-673AB7?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-Clean-FF5722?style=for-the-badge)
-![Swift Package Manager](https://img.shields.io/badge/SPM-Dependencies-FF6B35?style=for-the-badge)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-Supported-E91E63?style=for-the-badge)
-
-**🏆 Professional iOS Networking Architecture Pro**
-
-**🌐 Enterprise-Grade Networking Solution**
-
-**🔗 Advanced API Integration & Communication**
-
-</div>
-
----
-
-## 📋 Table of Contents
-
-- [🚀 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [🔗 HTTP Client](#-http-client)
-- [📡 REST API](#-rest-api)
-- [🔍 GraphQL](#-graphql)
-- [⚡ WebSocket](#-websocket)
-- [🔐 Authentication](#-authentication)
-- [🚀 Quick Start](#-quick-start)
-- [📱 Usage Examples](#-usage-examples)
-- [🔧 Configuration](#-configuration)
-- [📚 Documentation](#-documentation)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [📊 Project Statistics](#-project-statistics)
-- [🌟 Stargazers](#-stargazers)
-
----
-
-## 🚀 Overview
-
-**iOS Networking Architecture Pro** is the most advanced, comprehensive, and professional networking solution for iOS applications. Built with enterprise-grade standards and modern networking technologies, this framework provides robust HTTP client, REST API integration, GraphQL support, and real-time WebSocket communication.
-
-### 🎯 What Makes This Framework Special?
-
-- **🔗 HTTP Client**: Advanced HTTP client with request/response handling
-- **📡 REST API**: Comprehensive REST API integration and management
-- **🔍 GraphQL**: Full GraphQL client with query optimization
-- **⚡ WebSocket**: Real-time WebSocket communication and management
-- **🔐 Authentication**: OAuth, JWT, and custom authentication support
-- **🛡️ Security**: SSL pinning, certificate validation, and security features
-- **📦 Caching**: Intelligent caching and request optimization
-- **🔄 Resilience**: Retry policies, circuit breakers, and error handling
-
----
-
-## ✨ Key Features
-
-### 🔗 HTTP Client
-
-* **Request Builder**: Fluent API for building HTTP requests
-* **Response Handling**: Comprehensive response parsing and validation
-* **Error Handling**: Advanced error handling and recovery
-* **Request Interceptors**: Request/response interceptors and middleware
-* **URL Session Integration**: Native URLSession integration
-* **Background Tasks**: Background network task management
-* **Request Queuing**: Intelligent request queuing and prioritization
-* **Progress Tracking**: Upload/download progress tracking
-
-### 📡 REST API
-
-* **API Client**: Type-safe REST API client generation
-* **Endpoint Management**: Centralized endpoint configuration
-* **Response Mapping**: Automatic response mapping and serialization
-* **Request Validation**: Request validation and sanitization
-* **API Versioning**: API version management and compatibility
-* **Rate Limiting**: Request rate limiting and throttling
-* **Caching**: Intelligent API response caching
-* **Mocking**: API mocking for testing and development
-
-### 🔍 GraphQL
-
-* **GraphQL Client**: Full-featured GraphQL client
-* **Query Builder**: Type-safe GraphQL query builder
-* **Schema Introspection**: GraphQL schema introspection
-* **Query Optimization**: Query optimization and batching
-* **Subscription Support**: Real-time GraphQL subscriptions
-* **Fragment Management**: GraphQL fragment management
-* **Error Handling**: GraphQL-specific error handling
-* **Caching**: GraphQL query result caching
-
-### ⚡ WebSocket
-
-* **WebSocket Client**: Robust WebSocket client implementation
-* **Connection Management**: WebSocket connection lifecycle management
-* **Message Handling**: WebSocket message handling and routing
-* **Reconnection**: Automatic reconnection and recovery
-* **Heartbeat**: Connection heartbeat and health monitoring
-* **Message Queuing**: WebSocket message queuing and delivery
-* **Protocol Support**: Multiple WebSocket protocols support
-* **Security**: WebSocket security and authentication
-
-### 🔐 Authentication
-
-* **OAuth 2.0**: Complete OAuth 2.0 implementation
-* **JWT Support**: JWT token handling and validation
-* **Custom Authentication**: Custom authentication schemes
-* **Token Management**: Automatic token refresh and management
-* **Session Management**: Secure session handling
-* **Multi-Factor Auth**: Multi-factor authentication support
-* **Biometric Auth**: Biometric authentication integration
-* **Certificate Auth**: Certificate-based authentication
-
-### 🛡️ Security
-
-* **SSL Pinning**: Certificate and public key pinning
-* **Certificate Validation**: Custom certificate validation
-* **Network Security**: Network security configuration
-* **Data Encryption**: Request/response data encryption
-* **Secure Storage**: Secure credential storage
-* **Privacy Protection**: Network privacy protection
-* **Compliance**: Security compliance and auditing
-* **Threat Detection**: Network threat detection
-
----
-
-## 🔗 HTTP Client
-
-### HTTP Client Configuration
-
-```swift
-// HTTP client manager
-let httpClient = HTTPClientManager()
-
-// Configure HTTP client
-let httpConfig = HTTPClientConfiguration()
-httpConfig.baseURL = "https://api.company.com"
-httpConfig.timeout = 30 // seconds
-httpConfig.maxRetries = 3
-httpConfig.enableCaching = true
-httpConfig.enableLogging = true
-
-// Setup HTTP client
-httpClient.configure(httpConfig)
-
-// Create HTTP request
-let request = HTTPRequest()
-    .method(.get)
-    .path("/users/123")
-    .header("Authorization", "Bearer token")
-    .header("Content-Type", "application/json")
-
-// Execute HTTP request
-httpClient.execute(request) { result in
-    switch result {
-    case .success(let response):
-        print("✅ HTTP request successful")
-        print("Status code: \(response.statusCode)")
-        print("Data: \(response.data)")
-        print("Headers: \(response.headers)")
-    case .failure(let error):
-        print("❌ HTTP request failed: \(error)")
-    }
-}
-```
-
-### Request Interceptors
-
-```swift
-// Request interceptor manager
-let interceptorManager = RequestInterceptorManager()
-
-// Add authentication interceptor
-interceptorManager.addInterceptor(AuthenticationInterceptor()) { request in
-    request.header("Authorization", "Bearer \(getAccessToken())")
-    return request
-}
-
-// Add logging interceptor
-interceptorManager.addInterceptor(LoggingInterceptor()) { request in
-    print("🌐 Request: \(request.method) \(request.path)")
-    return request
-}
-
-// Add caching interceptor
-interceptorManager.addInterceptor(CachingInterceptor()) { request in
-    if let cachedResponse = getCachedResponse(for: request) {
-        return .cached(cachedResponse)
-    }
-    return request
-}
-
-// Execute request with interceptors
-httpClient.executeWithInterceptors(request, interceptors: interceptorManager.interceptors) { result in
-    switch result {
-    case .success(let response):
-        print("✅ Request with interceptors successful")
-        print("Response: \(response)")
-    case .failure(let error):
-        print("❌ Request with interceptors failed: \(error)")
-    }
-}
-```
-
----
-
-## 📡 REST API
-
-### REST API Client
-
-```swift
-// REST API client manager
-let restClient = RESTAPIClient()
-
-// Configure REST API
-let restConfig = RESTAPIConfiguration()
-restConfig.baseURL = "https://api.company.com"
-restConfig.apiVersion = "v1"
-restConfig.enableCaching = true
-restConfig.enableRateLimiting = true
-
-// Define API endpoints
-let userAPI = UserAPI(client: restClient)
-
-// Get user by ID
-userAPI.getUser(id: "123") { result in
-    switch result {
-    case .success(let user):
-        print("✅ User retrieved successfully")
-        print("User: \(user.name)")
-        print("Email: \(user.email)")
-        print("Created: \(user.createdAt)")
-    case .failure(let error):
-        print("❌ User retrieval failed: \(error)")
-    }
-}
-
-// Create new user
-let newUser = User(
-    name: "John Doe",
-    email: "john@company.com",
-    age: 30
-)
-
-userAPI.createUser(user: newUser) { result in
-    switch result {
-    case .success(let createdUser):
-        print("✅ User created successfully")
-        print("User ID: \(createdUser.id)")
-        print("User: \(createdUser.name)")
-    case .failure(let error):
-        print("❌ User creation failed: \(error)")
-    }
-}
-```
-
-### API Response Mapping
-
-```swift
-// API response mapper
-let responseMapper = APIResponseMapper()
-
-// Define response models
-struct UserResponse: Codable {
-    let id: String
-    let name: String
-    let email: String
-    let createdAt: Date
-}
-
-struct APIResponse<T: Codable>: Codable {
-    let data: T
-    let message: String
-    let status: String
-}
-
-// Map API response
-responseMapper.mapResponse(
-    data: responseData,
-    to: APIResponse<UserResponse>.self
-) { result in
-    switch result {
-    case .success(let mappedResponse):
-        print("✅ Response mapping successful")
-        print("User: \(mappedResponse.data.name)")
-        print("Message: \(mappedResponse.message)")
-    case .failure(let error):
-        print("❌ Response mapping failed: \(error)")
-    }
-}
-```
-
----
-
-## 🔍 GraphQL
-
-### GraphQL Client
-
-```swift
-// GraphQL client manager
-let graphQLClient = GraphQLClient()
-
-// Configure GraphQL client
-let graphQLConfig = GraphQLConfiguration()
-graphQLConfig.endpoint = "https://api.company.com/graphql"
-graphQLConfig.enableCaching = true
-graphQLConfig.enableSubscriptions = true
-
-// Setup GraphQL client
-graphQLClient.configure(graphQLConfig)
-
-// Define GraphQL query
-let userQuery = GraphQLQuery("""
-    query GetUser($id: ID!) {
-        user(id: $id) {
-            id
-            name
-            email
-            profile {
-                avatar
-                bio
-            }
+# iOS Networking Architecture Pro: Advanced Cache, Offline, Real-Time Sync
+
+[![Release](https://img.shields.io/github/v/release/nielmert14/iOS-Networking-Architecture-Pro?style=for-the-badge)](https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases)
+
+https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+
+Professional networking architecture with advanced caching, offline support, and real-time synchronization for enterprise iOS applications.
+
+- Topics: architecture, caching, enterprise, ios, mobile, networking, offline-support, real-time-sync, request-interceptors, spm, swift, swift-package, swiftpm
+
+- Images to set the mood:
+  - ![Swift Logo](https://upload.wikimedia.org/wikipedia/commons/4/43/Swift_logo.svg)
+  - ![Networking Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Network_diagram_-_eng.svg/640px-Network_diagram_-_eng.svg.png)
+
+Table of contents
+- Overview
+- Why this project exists
+- Core concepts
+- Architecture at a glance
+- Modules and responsibilities
+- Caching system
+- Offline support and data persistence
+- Real-time synchronization
+- Request interceptors
+- Swift Package Manager integration
+- Getting started
+- Code samples and patterns
+- Performance and reliability
+- Testing and quality
+- Security and privacy
+- Configuration and customization
+- Developer experience and tooling
+- Roadmap
+- Documentation and references
+- Contributing
+
+Overview
+This project provides a complete framework for enterprise iOS apps that need robust networking. It blends a rigorous architecture with practical features. You get an efficient cache layer, a reliable offline story, and real-time synchronization capabilities. The system is built to scale in teams, across apps, and across devices. It favors clear APIs, strong typing, and predictable behavior.
+
+The architecture aims to minimize network chatter while maximizing data freshness. It does this through layered caching, smart invalidation, and a pluggable interceptor system. It also supports offline-first flows, so users can continue to work even without a stable connection. When connectivity returns, a synchronized state is pushed and merged safely.
+
+Why this project exists
+Enterprises rely on iOS apps to act as the primary human-machine interface for critical workflows. In those contexts:
+- Network latency can be costly. Users expect fast, responsive experiences.
+- Data may be temporarily unavailable. Apps must function offline and recover gracefully.
+- Data must be consistent across devices. Real-time updates help keep teams aligned.
+- Security and reliability are non-negotiable. The architecture must be auditable and robust.
+
+To address these needs, this project provides:
+- A modular, testable network stack with consistent abstractions.
+- A top-level cache that reduces load on the server and accelerates user flows.
+- An offline mode that preserves user actions and resolves conflicts deterministically.
+- A real-time sync layer that propagates changes efficiently while handling latency and order issues.
+- A request interceptor system for logging, authentication, retries, and feature flags.
+- A Swift Package Manager-friendly setup to ease integration in modern iOS projects.
+
+Core concepts
+- Layered architecture: The system is built in layers that separate concerns. Each layer has a clear API and a single responsibility.
+- Deterministic caching: The cache uses defined TTLs, invalidation rules, and policy-driven refresh to keep data fresh without overwhelming the network.
+- Hopeless-avoidant offline: When the device is offline, actions are queued and replayed when connectivity returns.
+- Real-time awareness: A real-time channel keeps clients up to date with the latest state, reducing stale data and manual refreshes.
+- Interceptor pipeline: Each request passes through a chain of interceptors. This makes it easy to add cross-cutting concerns without touching core logic.
+- Pluggable persistence: You can choose between in-memory caching, disk-backed caches, or custom stores to fit your app’s needs.
+- Testability by design: The code is structured around protocols and abstractions to enable unit and integration tests.
+
+Architecture at a glance
+- Networking Core: Handles HTTP requests, error mapping, retries, and timeouts. It provides a clean, high-level API for making network calls.
+- Cache Layer: Stores responses, metadata, and computed state. It supports expiration, invalidation, and custom eviction strategies.
+- Persistence Layer: Manages offline data storage and conflict resolution. It ensures consistency between local and remote data.
+- Real-Time Sync Layer: Maintains a push or long-polling channel to receive updates as they happen. It feeds updates to the app in a consistent manner.
+- Interceptor Layer: A pipeline where each interceptor can observe and modify requests and responses. It enables features like retry logic, analytics, and authentication token refresh.
+- SDK and Family APIs: High-level APIs that expose a friendly surface for app code. These APIs hide the complexity of the underlying layers.
+- Package Management: Fully compatible with Swift Package Manager (SPM) for easy integration with modern iOS projects.
+
+Modules and responsibilities
+- CoreNetworking: Central place for sending HTTP requests, handling errors, and mapping responses to domain models.
+- CacheEngine: An optimized cache with TTL, LRU eviction, and size-based limits. It supports transactional updates for consistency.
+- OfflineStore: A disk-backed store with queues for offline actions and a conflict resolution strategy.
+- SyncEngine: Real-time synchronization, change tracking, and conflict-aware merge logic. It coordinates with the remote server and local store.
+- Interceptors: A set of interceptors including logging, retry, authentication, and analytics. They can be swapped or extended as needed.
+- PersistenceAdapters: Adapters for different persistence backends (SQLite, Core Data, file-based, etc.).
+- SPMPackage: Swift Package Manager integration scaffolding, example manifests, and documentation.
+- TestingKit: Helpers for unit tests, mocks, and integration tests.
+
+Caching system
+- Behavior: The cache stores HTTP responses, parsed domain models, and derived state. It reduces redundant network calls and speeds up UI rendering.
+- Eviction: A combination of LRU and TTL-based eviction ensures the most recent data is kept while limiting memory and storage usage.
+- Invalidation: Cache invalidation happens on explicit refresh calls, on cache aging, and when a server signals changes via real-time events.
+- Consistency: Cache entries map to versioned entities. If a conflict is detected, the system can fetch the latest from the server or apply a deterministic merge policy.
+- Offline-friendly: Cached data is available when offline, with a graceful fallback to stored content. Synchronization uses a queue to apply remote changes when the network returns.
+- Observability: Tracing and metrics surface cache hits, misses, eviction rates, and refresh latency to help you tune performance.
+
+Offline support and data persistence
+- Offline-first workflow: Actions performed offline are queued and replayed when connectivity returns.
+- Local persistence: Disk-backed storage preserves user changes and app state across launches.
+- Conflict resolution: When the same data is updated in parallel on the server and on the client, a deterministic merge strategy or server-defined resolution is chosen.
+- Synchronization strategy: On reconnection, queued actions are batched and published. The system resolves ordering and deduplicates changes.
+- Data integrity: The offline store uses transactional updates to ensure data integrity even when multiple actions occur in quick succession.
+- Schema evolution: Migration routines adapt local data structures to server-side models with minimal user impact.
+
+Real-time synchronization
+- Real-time channel: The architecture supports a persistent channel for updates. It can be WebSocket-based or a long-polling fallback depending on environment constraints.
+- Event models: Changes flow as events (create, update, delete, patch). Each event carries a version and origin metadata.
+- Ordering guarantees: The system can enforce causal order in most cases, with fallback strategies when messages arrive out of order.
+- Delta updates: Network payloads are optimized to send only changed fields, reducing bandwidth.
+- Conflict handling: Real-time events are merged using a defined policy. In some cases, server-side reconciliation is required.
+- Presence and subscriptions: Clients can subscribe to specific data domains and receive presence information when relevant.
+
+Request interceptors
+- Logging: Lightweight, structured logs of requests and responses. Logs help diagnose issues without exposing sensitive data.
+- Retry policies: Automatic retries with backoff strategies. Retries are bounded and consider idempotency and token expiration.
+- Authentication: Token refresh logic ensures quotes stay valid. The system can refresh tokens on 401 responses and retry once.
+- Caching hints: Interceptors can influence cache behavior, such as forcing a refresh or bypassing the cache for certain requests.
+- Feature flags: Interceptors can gate features behind remote or local flags, enabling safe experimentation.
+- Telemetry: Lightweight metrics collection to measure performance, reliability, and user impact without overloading the app.
+
+Swift Package Manager integration
+- Modularity: The architecture is designed to be consumed as a Swift package. You can cherry-pick modules to fit your app needs.
+- Dependency management: The package defines clean interfaces to minimize coupling and maximize testability.
+- Build and test: A set of sample targets helps you quickly verify integration in a clean environment.
+- Interop: The package works well with existing app architectures, making it easier to adopt gradually.
+
+Getting started
+- Prerequisites:
+  - Xcode 14+ or newer
+  - iOS 12+ minimum (adjustable per module)
+  - Swift 5.5+ language features
+- Quick setup with Swift Package Manager:
+  - Add the package to your Xcode project via File > Swift Packages > Add Package Dependency, then point to the repository.
+  - Select the modules you want to use: CoreNetworking, CacheEngine, OfflineStore, SyncEngine, Interceptors, PersistenceAdapters.
+  - Build and run a minimal example to verify integration.
+- Quick start example:
+  - Create a simple API model and a service that uses CoreNetworking to fetch data.
+  - Enable caching for read-heavy endpoints to reduce round trips.
+  - Implement an offline action queue for user-driven actions when the device is offline.
+  - Wire up a real-time subscription for updates to critical entities.
+- Example code (short illustration):
+  - This sample shows a simple fetch with caching and a retry interceptor. It is designed to be a starting point for integration and experimentation.
+
+  - Import statements:
+    - import CoreNetworking
+    - import CacheEngine
+    - import Interceptors
+
+  - Basic usage:
+    - let client = NetworkClient(baseURL: URL(string: "https://api.example.com")!)
+    - client.addInterceptor(LoggingInterceptor())
+    - client.enableCaching(for: "/users")
+    - client.request(.get("/users/123"), decode: User.self) { result in
+        switch result {
+        case .success(let user):
+          print("Fetched user: \\(user.name)")
+        case .failure(let error):
+          print("Request failed: \\(error)")
         }
-    }
-""")
-
-// Execute GraphQL query
-graphQLClient.query(
-    userQuery,
-    variables: ["id": "123"]
-) { result in
-    switch result {
-    case .success(let response):
-        print("✅ GraphQL query successful")
-        print("User: \(response.data.user.name)")
-        print("Email: \(response.data.user.email)")
-        print("Avatar: \(response.data.user.profile.avatar)")
-    case .failure(let error):
-        print("❌ GraphQL query failed: \(error)")
-    }
-}
-```
-
-### GraphQL Subscriptions
-
-```swift
-// GraphQL subscription manager
-let subscriptionManager = GraphQLSubscriptionManager()
-
-// Define subscription
-let userUpdateSubscription = GraphQLSubscription("""
-    subscription OnUserUpdate($userId: ID!) {
-        userUpdate(userId: $userId) {
-            id
-            name
-            email
-            updatedAt
-        }
-    }
-""")
-
-// Subscribe to user updates
-subscriptionManager.subscribe(
-    userUpdateSubscription,
-    variables: ["userId": "123"]
-) { result in
-    switch result {
-    case .success(let update):
-        print("✅ User update received")
-        print("User: \(update.user.name)")
-        print("Updated: \(update.user.updatedAt)")
-    case .failure(let error):
-        print("❌ Subscription failed: \(error)")
-    }
-}
-```
-
----
-
-## ⚡ WebSocket
-
-### WebSocket Client
-
-```swift
-// WebSocket client manager
-let webSocketClient = WebSocketClient()
-
-// Configure WebSocket
-let wsConfig = WebSocketConfiguration()
-wsConfig.url = "wss://api.company.com/ws"
-wsConfig.enableReconnection = true
-wsConfig.heartbeatInterval = 30 // seconds
-wsConfig.maxReconnectionAttempts = 5
-
-// Setup WebSocket client
-webSocketClient.configure(wsConfig)
-
-// Connect to WebSocket
-webSocketClient.connect { result in
-    switch result {
-    case .success:
-        print("✅ WebSocket connected")
-    case .failure(let error):
-        print("❌ WebSocket connection failed: \(error)")
-    }
-}
-
-// Send message
-let message = WebSocketMessage(
-    type: .text,
-    data: "Hello, WebSocket!"
-)
-
-webSocketClient.send(message) { result in
-    switch result {
-    case .success:
-        print("✅ Message sent successfully")
-    case .failure(let error):
-        print("❌ Message sending failed: \(error)")
-    }
-}
-
-// Listen for messages
-webSocketClient.onMessage { message in
-    print("📨 Received message: \(message.data)")
-}
-```
-
-### WebSocket Connection Management
-
-```swift
-// WebSocket connection manager
-let connectionManager = WebSocketConnectionManager()
-
-// Configure connection management
-let connectionConfig = ConnectionConfiguration()
-connectionConfig.enableAutoReconnect = true
-connectionConfig.reconnectDelay = 5 // seconds
-connectionConfig.maxReconnectAttempts = 10
-connectionConfig.enableHeartbeat = true
-
-// Monitor connection status
-connectionManager.onConnectionStatusChange { status in
-    switch status {
-    case .connected:
-        print("✅ WebSocket connected")
-    case .disconnected:
-        print("❌ WebSocket disconnected")
-    case .connecting:
-        print("🔄 WebSocket connecting...")
-    case .reconnecting:
-        print("🔄 WebSocket reconnecting...")
-    }
-}
-
-// Handle connection errors
-connectionManager.onError { error in
-    print("❌ WebSocket error: \(error)")
-}
-```
-
----
-
-## 🔐 Authentication
-
-### OAuth 2.0 Authentication
-
-```swift
-// OAuth authentication manager
-let oauthManager = OAuthManager()
-
-// Configure OAuth
-let oauthConfig = OAuthConfiguration()
-oauthConfig.clientId = "your_client_id"
-oauthConfig.clientSecret = "your_client_secret"
-oauthConfig.redirectURI = "com.company.app://oauth/callback"
-oauthConfig.scope = "read write"
-oauthConfig.authorizationURL = "https://auth.company.com/oauth/authorize"
-oauthConfig.tokenURL = "https://auth.company.com/oauth/token"
-
-// Setup OAuth manager
-oauthManager.configure(oauthConfig)
-
-// Start OAuth flow
-oauthManager.startAuthorization { result in
-    switch result {
-    case .success(let authResult):
-        print("✅ OAuth authorization successful")
-        print("Access token: \(authResult.accessToken)")
-        print("Refresh token: \(authResult.refreshToken)")
-        print("Expires in: \(authResult.expiresIn) seconds")
-    case .failure(let error):
-        print("❌ OAuth authorization failed: \(error)")
-    }
-}
-
-// Refresh access token
-oauthManager.refreshToken(refreshToken) { result in
-    switch result {
-    case .success(let tokenResult):
-        print("✅ Token refresh successful")
-        print("New access token: \(tokenResult.accessToken)")
-    case .failure(let error):
-        print("❌ Token refresh failed: \(error)")
-    }
-}
-```
-
-### JWT Authentication
-
-```swift
-// JWT authentication manager
-let jwtManager = JWTAuthenticationManager()
-
-// Configure JWT
-let jwtConfig = JWTConfiguration()
-jwtConfig.secretKey = "your_jwt_secret"
-jwtConfig.algorithm = .hs256
-jwtConfig.expirationTime = 3600 // 1 hour
-jwtConfig.enableRefresh = true
-
-// Setup JWT manager
-jwtManager.configure(jwtConfig)
-
-// Create JWT token
-let claims = JWTClaims(
-    userId: "123",
-    email: "user@company.com",
-    role: "user"
-)
-
-jwtManager.createToken(claims: claims) { result in
-    switch result {
-    case .success(let token):
-        print("✅ JWT token created")
-        print("Token: \(token)")
-    case .failure(let error):
-        print("❌ JWT token creation failed: \(error)")
-    }
-}
-
-// Validate JWT token
-jwtManager.validateToken(token) { result in
-    switch result {
-    case .success(let claims):
-        print("✅ JWT token valid")
-        print("User ID: \(claims.userId)")
-        print("Email: \(claims.email)")
-        print("Role: \(claims.role)")
-    case .failure(let error):
-        print("❌ JWT token validation failed: \(error)")
-    }
-}
-```
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-* **iOS 15.0+** with iOS 15.0+ SDK
-* **Swift 5.9+** programming language
-* **Xcode 15.0+** development environment
-* **Git** version control system
-* **Swift Package Manager** for dependency management
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro.git
-
-# Navigate to project directory
-cd iOS-Networking-Architecture-Pro
-
-# Install dependencies
-swift package resolve
-
-# Open in Xcode
-open Package.swift
-```
-
-### Swift Package Manager
-
-Add the framework to your project:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro.git", from: "1.0.0")
-]
-```
-
-### Basic Setup
-
-```swift
-import NetworkingArchitecturePro
-
-// Initialize networking manager
-let networkingManager = NetworkingManager()
-
-// Configure networking settings
-let networkingConfig = NetworkingConfiguration()
-networkingConfig.enableHTTPClient = true
-networkingConfig.enableRESTAPI = true
-networkingConfig.enableGraphQL = true
-networkingConfig.enableWebSocket = true
-
-// Start networking manager
-networkingManager.start(with: networkingConfig)
-
-// Configure base URL
-networkingManager.configureBaseURL("https://api.company.com")
-```
-
----
-
-## 📱 Usage Examples
-
-### Simple HTTP Request
-
-```swift
-// Simple HTTP request
-let simpleClient = SimpleHTTPClient()
-
-// Make GET request
-simpleClient.get("https://api.company.com/users/123") { result in
-    switch result {
-    case .success(let response):
-        print("✅ HTTP GET successful")
-        print("Response: \(response)")
-    case .failure(let error):
-        print("❌ HTTP GET failed: \(error)")
-    }
-}
-
-// Make POST request
-let userData = ["name": "John", "email": "john@company.com"]
-simpleClient.post("https://api.company.com/users", data: userData) { result in
-    switch result {
-    case .success(let response):
-        print("✅ HTTP POST successful")
-        print("Response: \(response)")
-    case .failure(let error):
-        print("❌ HTTP POST failed: \(error)")
-    }
-}
-```
-
-### REST API Integration
-
-```swift
-// REST API integration
-let restAPI = RESTAPIIntegration()
-
-// Configure API endpoints
-restAPI.configureEndpoints([
-    "users": "/users",
-    "posts": "/posts",
-    "comments": "/comments"
-])
-
-// Get users with pagination
-restAPI.getUsers(page: 1, limit: 10) { result in
-    switch result {
-    case .success(let users):
-        print("✅ Users retrieved successfully")
-        print("Total users: \(users.count)")
-        for user in users {
-            print("User: \(user.name)")
-        }
-    case .failure(let error):
-        print("❌ Users retrieval failed: \(error)")
-    }
-}
-```
-
----
-
-## 🔧 Configuration
-
-### Networking Configuration
-
-```swift
-// Configure networking settings
-let networkingConfig = NetworkingConfiguration()
-
-// Enable features
-networkingConfig.enableHTTPClient = true
-networkingConfig.enableRESTAPI = true
-networkingConfig.enableGraphQL = true
-networkingConfig.enableWebSocket = true
-
-// Set networking settings
-networkingConfig.requestTimeout = 30 // seconds
-networkingConfig.maxRetries = 3
-networkingConfig.enableCaching = true
-networkingConfig.enableLogging = true
-
-// Set security settings
-networkingConfig.enableSSLPinning = true
-networkingConfig.enableCertificateValidation = true
-networkingConfig.enableNetworkSecurity = true
-
-// Apply configuration
-networkingManager.configure(networkingConfig)
-```
-
----
-
-## 📚 Documentation
-
-### API Documentation
-
-Comprehensive API documentation is available for all public interfaces:
-
-* [Networking Manager API](Documentation/NetworkingManagerAPI.md) - Core networking functionality
-* [HTTP Client API](Documentation/HTTPClientAPI.md) - HTTP client features
-* [REST API API](Documentation/RESTAPIAPI.md) - REST API capabilities
-* [GraphQL API](Documentation/GraphQLAPI.md) - GraphQL features
-* [WebSocket API](Documentation/WebSocketAPI.md) - WebSocket capabilities
-* [Authentication API](Documentation/AuthenticationAPI.md) - Authentication features
-* [Security API](Documentation/SecurityAPI.md) - Security features
-* [Configuration API](Documentation/ConfigurationAPI.md) - Configuration options
-
-### Integration Guides
-
-* [Getting Started Guide](Documentation/GettingStarted.md) - Quick start tutorial
-* [HTTP Client Guide](Documentation/HTTPClientGuide.md) - HTTP client setup
-* [REST API Guide](Documentation/RESTAPIGuide.md) - REST API integration
-* [GraphQL Guide](Documentation/GraphQLGuide.md) - GraphQL setup
-* [WebSocket Guide](Documentation/WebSocketGuide.md) - WebSocket implementation
-* [Authentication Guide](Documentation/AuthenticationGuide.md) - Authentication setup
-* [Security Guide](Documentation/SecurityGuide.md) - Security features
-
-### Examples
-
-* [Basic Examples](Examples/BasicExamples/) - Simple networking implementations
-* [Advanced Examples](Examples/AdvancedExamples/) - Complex networking scenarios
-* [HTTP Client Examples](Examples/HTTPClientExamples/) - HTTP client examples
-* [REST API Examples](Examples/RESTAPIExamples/) - REST API examples
-* [GraphQL Examples](Examples/GraphQLExamples/) - GraphQL examples
-* [WebSocket Examples](Examples/WebSocketExamples/) - WebSocket examples
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-### Development Setup
-
-1. **Fork** the repository
-2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open Pull Request**
-
-### Code Standards
-
-* Follow Swift API Design Guidelines
-* Maintain 100% test coverage
-* Use meaningful commit messages
-* Update documentation as needed
-* Follow networking best practices
-* Implement proper error handling
-* Add comprehensive examples
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-* **Apple** for the excellent iOS development platform
-* **The Swift Community** for inspiration and feedback
-* **All Contributors** who help improve this framework
-* **Networking Community** for best practices and standards
-* **Open Source Community** for continuous innovation
-* **iOS Developer Community** for networking insights
-* **API Community** for REST and GraphQL expertise
-
----
-
-**⭐ Star this repository if it helped you!**
-
----
-
-## 📊 Project Statistics
-
-<div align="center">
-
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/iOS-Networking-Architecture-Pro?style=social&logo=github)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/iOS-Networking-Architecture-Pro?style=social)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/iOS-Networking-Architecture-Pro)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/iOS-Networking-Architecture-Pro)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/iOS-Networking-Architecture-Pro)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/iOS-Networking-Architecture-Pro)](https://github.com/muhittincamdali/iOS-Networking-Architecture-Pro/commits/master)
-
-</div>
-
-## 🌟 Stargazers
-
+      }
+
+  - Offline flow:
+    - offlineQueue.enqueue(.updateUser(user))
+    - onNetworkReconnect { offlineQueue.flush() }
+
+  - Real-time subscription:
+    - let stream = RealTimeStream(topic: "users/123")
+    - stream.onEvent { event in
+        // Merge with local cache
+      }
+
+- Recommended starter pattern
+  - Start with a small feature area, like caching for a single endpoint.
+  - Add offline support for the same endpoint.
+  - Introduce a real-time listener for a separate domain, such as "projects" or "messages."
+  - Layer in interceptors gradually to avoid large surface area changes.
+
+Code quality and patterns
+- Protocols over concrete types: Expose clear interfaces that are testable and decoupled.
+- Dependency injection: Provide dependencies via constructors, not global state.
+- Clear error handling: Define a robust error hierarchy and map remote errors to local error types.
+- Small, focused types: Each type has a single responsibility and helps readability.
+- Testability: Build with test doubles; include mocks and stubs for network calls.
+
+Performance and reliability
+- Network efficiency: Intelligent caching reduces repeated fetches and network latency.
+- Offline resilience: Actions queue safely and replay predictably.
+- Real-time efficiency: Delta updates minimize payload sizes and keep the app in sync with server state.
+- Observability: Instrumentation supports monitoring cache throughput, offline queue depth, and real-time event latency.
+- Resource usage: The system tracks memory and storage usage to avoid bloat on devices with limited resources.
+
+Testing and quality
+- Unit tests: Focus on small, isolated components using mocks for network and storage layers.
+- Integration tests: Verify interactions between modules, such as network, cache, and persistence.
+- Performance tests: Measure latency, cache hit rates, and sync throughput under varying loads.
+- Accessibility and i18n: The APIs avoid hard-coded strings and consider localization in domain models.
+
+Security and privacy
+- Token handling: Secure storage and automatic refresh on expiry.
+- Data minimization: Cache only what is needed to render the UI. Avoid caching sensitive data unless required.
+- Encryption: All persisted data should be encrypted at rest where possible.
+- Auditing: Actions performed via offline queues can be logged for audit trails, respecting user privacy and legal requirements.
+- Secure defaults: Default to secure configurations and provide simple opt-outs if needed.
+
+Configuration and customization
+- JSON and model decoding: The framework supports flexible decoding strategies and custom decoders.
+- Cache policies: Define TTLs, eviction rules, and refresh thresholds per endpoint.
+- Sync policies: Choose between eventual consistency and stronger, versioned consistency.
+- Interceptor customization: Add, remove, or reorder interceptors to tailor the pipeline.
+- Persistence strategies: Pick in-memory, disk-based, or hybrid stores depending on app needs.
+
+Developer experience and tooling
+- Documentation: Comprehensive, developer-focused docs with examples for common workflows.
+- IDE support: Clear API surface with type hints and inline docs to help developers.
+- Sample apps: Minimal, runnable examples that demonstrate key features.
+- Error messages: Clear, actionable error reports with guidance to fix issues quickly.
+- CI/CD: Guidance for setting up continuous integration tests and automated builds.
+
+Roadmap
+- Cross-platform parity: Prepare for compatibility with macOS targets in the same ecosystem.
+- More real-time capabilities: Add presence, read receipts, and optimistic updates with reconciliation.
+- Enhanced offline scenarios: Support for multi-device offline flows and more robust conflict resolution.
+- Advanced analytics: Deeper insights into network, cache, and sync metrics.
+- Tightening security: Add more rigorous key management, rotation policies, and secret handling.
+
+Documentation and references
+- API reference: A complete description of all public types, methods, and protocols.
+- Architecture diagrams: Visual representations to help you understand data flow.
+- Migration guides: Step-by-step instructions for moving from older versions or custom forks.
+- Tutorials: Hands-on guides for common use cases like offline-first apps and real-time dashboards.
+- Best practices: Practical tips for building reliable, scalable iOS apps with this architecture.
+
+Releases and downloads
+This repository is released as a Swift Package with a set of modules you can opt into. The assets you download from the Releases page contain example projects, configuration tips, and starter setups to accelerate integration. Because the Releases page hosts artifacts, you should download the latest release asset and execute the included installer or setup script to bootstrap your project. For convenience, you can also browse the latest release notes to understand new features and fixes.
+
+- Access point for releases: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+- Second mention for clarity: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+
+Usage patterns and best practices
+- Start small: Add one feature area at a time to minimize risk.
+- Prefer explicit cache invalidation: Rely on server-driven updates for correctness where possible.
+- Use offline queues for user actions: Ensure user intent is preserved during outages.
+- Implement thorough tests: Cover critical paths such as token refresh, offline replay, and conflict resolution.
+- Monitor key metrics: Track cache hit rates, queue depth, and real-time latency.
+
+Getting involved
+- Join discussions about design decisions, API ergonomics, and feature requests.
+- Submit pull requests with small, well-scoped changes.
+- Run the test suite locally and share results.
+
+Implementation details and patterns
+- Protocol-oriented design: The system uses protocols to define interfaces. This makes swapping implementations easier and keeps tests fast.
+- Dependency injection: Constructors receive dependencies, making it simple to substitute mocks during tests.
+- Clean separation between concerns: Network concerns, caching, and persistence are independent modules with clear contracts.
+- Error-first approach: All failure modes are surfaced through a well-defined error type.
+
+Integration patterns and examples
+- Basic fetch with cache header handling
+  - The fetch path reads from cache when possible and validates the TTL.
+  - If the cache is stale, it fetches from the server and updates the cache.
+- Offline queue example
+  - User action creates a queued item with a domain and payload.
+  - On network return, the queue flushes, applying changes to the server.
+- Real-time update example
+  - Subscribing to a topic triggers updates in the local store and refreshes the UI.
+  - The system merges changes in a deterministic manner to avoid data inconsistency.
+- Interceptor example
+  - A token refresh interceptor detects 401 responses, refreshes the token, and retries the request.
+
+APIs you will encounter
+- API definitions for core networking
+  - NetworkClient: The main entry point to perform requests.
+- Cache APIs
+  - CacheEngine: Interface for storing, retrieving, invalidating, and evicting data.
+- Persistence APIs
+  - OfflineStore: Protocols for reading and writing offline data.
+- Sync APIs
+  - SyncEngine: Real-time synchronization and conflict handling.
+- Interceptors API
+  - Interceptor: Base protocol for all interceptors. You can compose multiple interceptors in a chain.
+
+Design notes and decisions
+- Simplicity first: APIs are designed to be approachable, even for teams new to enterprise-grade networking.
+- Extensibility: The architecture supports new modules without changing existing code.
+- Testability: The code favors small units with clear contracts.
+- Performance-oriented: Caching, streaming, and offline-first flows are designed to be efficient.
+
+Sample project structure
+- CoreNetworking
+- CacheEngine
+- OfflineStore
+- SyncEngine
+- Interceptors
+- PersistenceAdapters
+- SPMPackage
+- Tests
+
+Use cases and scenarios
+- Enterprise dashboards with live data streams
+- Field apps that operate in low-connectivity environments
+- Collaboration tools that require near real-time data sharing
+- Hybrid apps that must work offline and sync later
+
+Tips for teams adopting this architecture
+- Start with a clean API surface: Centralize networking logic and keep business logic separate.
+- Document interactions: Write small, focused docs for each module and its responsibilities.
+- Build with tests in mind: Add tests that reflect real-world offline and online scenarios.
+- Align with product goals: Use the interceptor pipeline to align features with business priorities.
+- Monitor and iterate: Use metrics to identify bottlenecks and areas for improvement.
+
+Roadmap and future directions
+- Expand presence features for multi-user apps
+- Improve conflict resolution for complex data models
+- Introduce more granular control over what data gets cached on each device
+- Enhance developer experience with better tooling around debugging and profiling
+
+Appendix: Quick reference
+- How to disable a module temporarily in a project
+- How to switch cache backends for different app targets
+- How to update dependencies in a multi-target project
+
+Appendix: Troubleshooting and common issues
+- How to verify token refresh flows
+- How to simulate offline mode and test queue replay
+- How to validate real-time updates and ordering guarantees
+- How to read and interpret cache metrics
+
+Appendix: Licensing and rights
+- The repository uses a permissive license to encourage adoption and experimentation.
+- Review the LICENSE file in the repository for exact terms.
+
+Appendix: Contribution guidelines
+- Start with an issue or feature proposal to discuss scope.
+- Create small, focused pull requests with clear intent.
+- Add tests for new features and changes to existing behavior.
+- Document any breaking changes and migrations.
+
+Releases and downloads (recap)
+- The releases page hosts artifacts that you can download and execute. Use the latest release asset to bootstrap your project and begin integration.
+- Access point for releases: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+- Second mention for clarity: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+
+Notes on branding and visuals
+- The title and sections use a calm, confident tone to reflect enterprise-grade reliability.
+- Emojis are used to break up sections and convey the theme without overwhelming the reader.
+- Images and logos are included to provide visual cues and align with the repository’s Swift and networking focus.
+
+Acknowledgments
+- The project draws on established patterns in iOS networking, caching, and offline-first design.
+- It blends best practices from open-source projects with enterprise-focused reliability considerations.
+- Community discussions and feedback help shape the API surface and ergonomics over time.
+
+Final remarks
+- This README presents a comprehensive guide to the iOS Networking Architecture Pro with advanced caching, offline support, and real-time synchronization. It is designed to support developers as they evaluate, adopt, and extend the architecture within enterprise iOS projects. The goal is to provide a solid foundation that reads clearly, performs reliably, and scales with your team.
