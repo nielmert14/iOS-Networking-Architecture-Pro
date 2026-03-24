@@ -348,3 +348,7 @@ Acknowledgments
 
 Final remarks
 - This README presents a comprehensive guide to the iOS Networking Architecture Pro with advanced caching, offline support, and real-time synchronization. It is designed to support developers as they evaluate, adopt, and extend the architecture within enterprise iOS projects. The goal is to provide a solid foundation that reads clearly, performs reliably, and scales with your team.
+
+## Links
+
+[![Hypercommit](https://img.shields.io/badge/Hypercommit-DB2475)](https://hypercommit.com/ios-networking-architecture-pro)
